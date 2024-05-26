@@ -1,0 +1,794 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+         <meta http-equiv="x-ua-compatible" content="ie=edge">
+         <title>Reveal
+ </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="{% static 'main/assets/js/site.webmanifest' %}">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'main/assets/img/favicon.ico' %}">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="{% static 'main/assets/css/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/owl.carousel.min.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/flaticon.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/price_rangs.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/slicknav.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/animate.min.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/magnific-popup.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/fontawesome-all.min.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/themify-icons.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/slick.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/nice-select.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/style.css' %}">
+            <link rel="stylesheet" href="{% static 'main/assets/css/radio.css' %}">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   </head>
+
+   <body>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{% static 'main/assets/img/logo/jobchecker.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+       <div class="header-area header-transparrent">
+           <div class="headder-top header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-2">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="{% url 'jobseaker_index' %}"><img src="{% static 'main/assets/img/logo/jobchecker.png' %}" width="100px" alt=""></a>
+                            </div> 
+                        </div>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="menu-wrapper">
+                                <!-- Main-menu -->
+                                <div class="main-menu">
+                                    <nav class="d-none d-lg-block">
+                                      <ul id="navigation">
+                                        <li><a href="{% url 'jobseaker_index' %}">Home</a></li>
+                                        <li><a href="{% url 'jobseaker_analyze_job_post' %}">Analyze Job Post</a></li>
+                                        <li><a href="{% url 'jobseaker_survey' %}">Survey</a></li>
+                                        <!-- <li><a href="{% url 'jobseaker_analysis_report' %}">Analysis Report</a></li> -->
+
+                                        <li><a href="{% url 'jobseaker_feedback' %}">Feedback</a></li>
+                                        <li><a href="{% url 'main_index' %}">Logout</a></li>
+                                    </ul>
+                                    </nav>
+                                </div>          
+
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+           </div>
+       </div>
+        <!-- Header End -->
+    </header>
+    <main>
+
+        <!-- Content wrapper -->
+ <div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+
+      <div class="row justify-content-center">
+       
+      
+          <!-- Form controls -->
+          <div class="col-1"></div>
+          <div class="col-md-10">
+            <div class="card">
+                <div style="margin:30px ;">
+                    <form action=""   method="post">
+                      {% csrf_token %}
+
+                    <center>
+                        <h4 style="font-family: fantasy;">1.The fake company belongs to which industry ?</h4>
+                    </center>
+                
+
+                <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Computer Software" required class="radio-button" value="Computer Software" type="radio" name="radio1" />
+                        <div class="radio-tile">
+                          
+                          <label for="Computer Software" class="radio-tile-label">Computer Software</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Information Technology and Services" required class="radio-button" value="Information Technology and Services" type="radio" name="radio1" />
+                        <div class="radio-tile">
+                       
+                          <label for="Information Technology and Services" class="radio-tile-label">Information Technology and Services</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Internet" required class="radio-button" value="Internet" type="radio" name="radio1" />
+                        <div class="radio-tile">
+                         
+                          <label for="Internet" class="radio-tile-label">Internet</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Marketing and Advertising" required class="radio-button" value="Marketing and Advertising" type="radio" name="radio1" />
+                        <div class="radio-tile">
+                         
+                          <label for="Marketing and Advertising" class="radio-tile-label">Marketing and Advertising</label>
+                        </div>
+                      </div>
+                      <div class="input-container">
+                        <input id="Education Management" required class="radio-button" value="Education Management" type="radio" name="radio1" />
+                        <div class="radio-tile">
+                         
+                          <label for="Education Management" class="radio-tile-label">Education Management</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                
+
+
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >2.What is the employment type provided by that company?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Full Time" required class="radio-button" value="Full Time" type="radio" name="radio2" />
+                        <div class="radio-tile">
+                          
+                          <label for="Full Time" class="radio-tile-label">Full Time</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Part Time" required class="radio-button" value="Part Time" type="radio" name="radio2" />
+                        <div class="radio-tile">
+                       
+                          <label for="Part Time" class="radio-tile-label">Part Time</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Intern" required class="radio-button" value="Intern" type="radio" name="radio2" />
+                        <div class="radio-tile">
+                         
+                          <label for="Intern" class="radio-tile-label">Intern</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Contract" required class="radio-button" value="Contract" type="radio" name="radio2" />
+                        <div class="radio-tile">
+                         
+                          <label for="Contract" class="radio-tile-label">Contract</label>
+                        </div>
+                      </div>
+                 
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >3.Did the job information have its Company Logo?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Yes" required class="radio-button" value="Yes" type="radio" name="radio3" />
+                        <div class="radio-tile">
+                          
+                          <label for="Yes" class="radio-tile-label">Yes</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="No" required class="radio-button" value="No" type="radio" name="radio3" />
+                        <div class="radio-tile">
+                       
+                          <label for="No" class="radio-tile-label">No</label>
+                        </div>
+                      </div>
+                  
+                  
+               
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >4.Experience required by that company</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Fresher" required class="radio-button" value="Fresher" type="radio" name="radio4" />
+                        <div class="radio-tile">
+                          
+                          <label for="Fresher" class="radio-tile-label">Fresher</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Associate" required class="radio-button" value="Associate" type="radio" name="radio4" />
+                        <div class="radio-tile">
+                       
+                          <label for="Associate" class="radio-tile-label">Associate</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Internship" required class="radio-button" value="Internship" type="radio" name="radio4" />
+                        <div class="radio-tile">
+                         
+                          <label for="Internship" class="radio-tile-label">Internship</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Mid Senior Level" required class="radio-button" value="Mid Senior Level" type="radio" name="radio4" />
+                        <div class="radio-tile">
+                         
+                          <label for="Mid Senior Level" class="radio-tile-label">Mid Senior Level</label>
+                        </div>
+                      </div>
+                      <div class="input-container">
+                        <input id="Not Applicable" required class="radio-button" value="Not Applicable" type="radio" name="radio4" />
+                        <div class="radio-tile">
+                         
+                          <label for="Not Applicable" class="radio-tile-label">Not Applicable</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >5.Education required by that company</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Bachelor's Degree" required class="radio-button" value="Bachelor's Degree" type="radio" name="radio5" />
+                        <div class="radio-tile">
+                          
+                          <label for="Bachelor's Degree" class="radio-tile-label">Bachelor's Degree</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="High School" required class="radio-button" value="High School" type="radio" name="radio5" />
+                        <div class="radio-tile">
+                       
+                          <label for="High School" class="radio-tile-label">High School</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Master's Degree" required class="radio-button" value="Master's Degree" type="radio" name="radio5" />
+                        <div class="radio-tile">
+                         
+                          <label for="Master's Degree" class="radio-tile-label">Master's Degree</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Associate Degree" required class="radio-button" value="Associate Degree" type="radio" name="radio5" />
+                        <div class="radio-tile">
+                         
+                          <label for="Associate Degree" class="radio-tile-label">Associate Degree</label>
+                        </div>
+                      </div>
+                      <div class="input-container">
+                        <input id="Unspecified" required class="radio-button" value="Unspecified" type="radio" name="radio5" />
+                        <div class="radio-tile">
+                         
+                          <label for="Unspecified" class="radio-tile-label">Unspecified</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >6.What job offer did you get?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Sales Executive"required class="radio-button" value="Sales Executive" type="radio" name="radio6" />
+                        <div class="radio-tile">
+                          
+                          <label for="Sales Executive" class="radio-tile-label">Sales Executive</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Web DEveloper"required class="radio-button" value="Web DEveloper" type="radio" name="radio6" />
+                        <div class="radio-tile">
+                       
+                          <label for="Web DEveloper" class="radio-tile-label">Web DEveloper</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Project Intern"required class="radio-button" value="Project Intern" type="radio" name="radio6" />
+                        <div class="radio-tile">
+                         
+                          <label for="Project Intern" class="radio-tile-label">Project Intern</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Research associate"required class="radio-button" value="Research associate" type="radio" name="radio6" />
+                        <div class="radio-tile">
+                         
+                          <label for="Research associate" class="radio-tile-label">Research associate</label>
+                        </div>
+                      </div>
+                      <div class="input-container">
+                        <input id="Product Manager"required class="radio-button" value="Product Manager" type="radio" name="radio6" />
+                        <div class="radio-tile">
+                         
+                          <label for="Product Manager" class="radio-tile-label">Product Manager</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >7.Where did you find that job?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="E-mail" required class="radio-button" value="E-mail" type="radio" name="radio7" />
+                        <div class="radio-tile">
+                          
+                          <label for="E-mail" class="radio-tile-label">E-mail</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Social Media" required class="radio-button" value="Social Media" type="radio" name="radio7" />
+                        <div class="radio-tile">
+                       
+                          <label for="Social Media" class="radio-tile-label">Social Media</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Online Website" required class="radio-button" value="Online Website" type="radio" name="radio7" />
+                        <div class="radio-tile">
+                         
+                          <label for="Online Website" class="radio-tile-label">Online Website</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="College" required class="radio-button" value="College" type="radio" name="radio7" />
+                        <div class="radio-tile">
+                         
+                          <label for="College" class="radio-tile-label">College</label>
+                        </div>
+                      </div>
+                      <div class="input-container">
+                        <input id="Super Set" required class="radio-button" value="Super Set" type="radio" name="radio7" />
+                        <div class="radio-tile">
+                         
+                          <label for="Super Set" class="radio-tile-label">Super Set</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >8.How much salary did the fake job offer?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Less Than 1000k" required class="radio-button" value="Less Than 1000k" type="radio" name="radio8" />
+                        <div class="radio-tile">
+                          
+                          <label for="Less Than 1000k" class="radio-tile-label">Less Than 1000k</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="1000k to 5000k" required class="radio-button" value="1000k to 5000k" type="radio" name="radio8" />
+                        <div class="radio-tile">
+                       
+                          <label for="1000k to 5000k" class="radio-tile-label">1000k to 5000k</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="5000k to 10,000k" required class="radio-button" value="5000k to 10,000k" type="radio" name="radio8" />
+                        <div class="radio-tile">
+                         
+                          <label for="5000k to 10,000k" class="radio-tile-label">5000k to 10,000k</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="10,000k Above" required class="radio-button" value="10,000k Above" type="radio" name="radio8" />
+                        <div class="radio-tile">
+                         
+                          <label for="10,000k Above" class="radio-tile-label">10,000k Above</label>
+                        </div>
+                      </div>
+                     
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >9.Were you asked to pay some amount in advance?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Yes" required class="radio-button" value="Yes" type="radio" name="radio9" />
+                        <div class="radio-tile">
+                          
+                          <label for="Yes" class="radio-tile-label">Yes</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="No" required class="radio-button" value="No" type="radio" name="radio9" />
+                        <div class="radio-tile">
+                       
+                          <label for="No" class="radio-tile-label">No</label>
+                        </div>
+                      </div>
+                  
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >10.What did they steal from you?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Personal Details" required class="radio-button" value="Personal Details" type="radio" name="radio10" />
+                        <div class="radio-tile">
+                          
+                          <label for="Personal Details" class="radio-tile-label">Personal Details</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Credit Card Details" required class="radio-button" value="Credit Card Details" type="radio" name="radio10" />
+                        <div class="radio-tile">
+                       
+                          <label for="Credit Card Details" class="radio-tile-label">Credit Card Details</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Documents" required class="radio-button" value="Documents" type="radio" name="radio10" />
+                        <div class="radio-tile">
+                         
+                          <label for="Documents" class="radio-tile-label">Documents</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Photo and Media" required class="radio-button" value="Photo and Media" type="radio" name="radio10" />
+                        <div class="radio-tile">
+                         
+                          <label for="Photo and Media" class="radio-tile-label">Photo and Media</label>
+                        </div>
+                      </div>
+                      <div class="input-container">
+                        <input id="Money" required class="radio-button" value="Money" type="radio" name="radio10" />
+                        <div class="radio-tile">
+                         
+                          <label for="Money" class="radio-tile-label">Money</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >11.Did you file a complaint about this fake job?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Yes" required class="radio-button" value="Yes" type="radio" name="radio11" />
+                        <div class="radio-tile">
+                          
+                          <label for="Yes" class="radio-tile-label">Yes</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="No" required class="radio-button" value="No" type="radio" name="radio11" />
+                        <div class="radio-tile">
+                       
+                          <label for="No" class="radio-tile-label">No</label>
+                        </div>
+                      </div>
+                      
+                      <div class="input-container">
+                        <input id="Nill" required class="radio-button" value="Nill" type="radio" name="radio11" />
+                        <div class="radio-tile">
+                       
+                          <label for="Nill" class="radio-tile-label">Nill</label>
+                        </div>
+                      </div>
+                                      </div>
+                  </div>
+
+
+                <center><h4  style="font-family: fantasy;" class="mt-5" >12.Have you ever found a fake job on social media?</h4></center>
+                  <div class="opt">
+                    <div class="radio-tile-group">
+                      <div class="input-container">
+                        <input id="Whatsapp" required class="radio-button" value="Whatsapp" type="radio" name="radio12" />
+                        <div class="radio-tile">
+                          
+                          <label for="Whatsapp" class="radio-tile-label">Whatsapp</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Facebook" required class="radio-button" value="Facebook" type="radio" name="radio12" />
+                        <div class="radio-tile">
+                       
+                          <label for="Facebook" class="radio-tile-label">Facebook</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Instagram" required class="radio-button" value="Instagram" type="radio" name="radio12" />
+                        <div class="radio-tile">
+                         
+                          <label for="Instagram" class="radio-tile-label">Instagram</label>
+                        </div>
+                      </div>
+                  
+                      <div class="input-container">
+                        <input id="Indeed" required class="radio-button" value="Indeed" type="radio" name="radio12" />
+                        <div class="radio-tile">
+                         
+                          <label for="Indeed" class="radio-tile-label">Indeed</label>
+                        </div>
+                      </div>
+                      <div class="input-container">
+                        <input id="Linkedin" required class="radio-button" value="Linkedin" type="radio" name="radio12" />
+                        <div class="radio-tile">
+                         
+                          <label for="Linkedin" class="radio-tile-label">Linkedin</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <br>
+                  <center>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </center>
+
+
+
+</form>
+            </div>
+
+
+
+            </div>
+            
+
+          
+
+
+
+
+
+          </div>
+
+          <div class="col-1"></div>
+         
+
+      </div>
+    </div>
+       
+      
+
+    </main>
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area footer-bg footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                       <div class="single-footer-caption mb-50">
+                         <div class="single-footer-caption mb-30">
+                             <div class="footer-tittle">
+                                 <h4>About Us</h4>
+                                 <div class="footer-pera">
+                                    <p>Finding jobs easily from our website and the companies hosting jobs very easily.</p>
+                                </div>
+                             </div>
+                         </div>
+
+                       </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Contact Info</h4>
+                                <ul>
+                                  <li>
+                                  <p>Address : D. Y. Patil, Pune</p>
+                                  </li>
+                                  <li><a href="#">Phone : +91 7666353784</a></li>
+                                  <li><a href="#">Email : opkulkarni0104@gmail.com</a></li>
+                              </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Important Link</h4>
+                                <ul>
+                                    <li><a href="#"> View Project</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Testimonial</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+               <!--  -->
+               <div class="row footer-wejed justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <!-- logo -->
+                        <div class="footer-logo mb-20">
+                            <a href="{% url 'main_index' %}"><img src="{% static 'main/assets/img/logo/jobchecker.png' %}" width="180" alt=""></a>
+                          </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="footer-tittle-bottom">
+                        <span>5000+</span>
+                        <p>Talented Hunter</p>
+                    </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="footer-tittle-bottom">
+                            <span>451</span>
+                            <p>Talented Hunter</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <!-- Footer Bottom Tittle -->
+                        <div class="footer-tittle-bottom">
+                            <span>568</span>
+                            <p>Talented Hunter</p>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <!-- footer-bottom area -->
+        <div class="footer-bottom-area footer-bg">
+            <div class="container">
+                <div class="footer-border">
+                     <div class="row d-flex justify-content-between align-items-center">
+                         <div class="col-xl-10 col-lg-10 ">
+                          <div class="copyright" style="color:aliceblue">
+                            &copy; Copyrights @2024 by  <span class="text-color:white">Reveal</span>  | Designed and Developed by <a href="" style="color:rgb(12, 152, 216)" target="_blank">@Omkar @Pranav @Ravichandra @Saurabh</a>
+                        </div>
+                         </div>
+                         <div class="col-xl-2 col-lg-2">
+                             <div class="footer-social f-right">
+                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fas fa-globe"></i></a>
+                                 <a href="#"><i class="fab fa-behance"></i></a>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+  
+  <!-- JS here -->
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+  <script>swal({
+          title: "Success!",
+          text: "{{message}}",
+          icon: "success",
+          button: "OK",
+      });
+  </script>
+  
+  {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+  <script>swal({
+          title: "Warning :)",
+          text: "{{message}}",
+          icon: "warning",
+          button: "OK",
+      });
+  </script>
+  {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+  <script>swal({
+          title: "info :)",
+          text: "{{message}}",
+          icon: "info",
+          button: "OK",
+      });
+  </script>
+  {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+  <script>swal({
+          title: "error :)",
+          text: "{{message}}",
+          icon: "error",
+          button: "OK",
+      });
+  </script>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="{% static 'main/assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="{% static 'main/assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+        <script src="{% static 'main/assets/js/popper.min.js' %}"></script>
+        <script src="{% static 'main/assets/js/bootstrap.min.js' %}"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="{% static 'main/assets/js/jquery.slicknav.min.js' %}"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{% static 'main/assets/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'main/assets/js/slick.min.js' %}"></script>
+        <script src="{% static 'main/assets/js/price_rangs.js' %}"></script>
+        <!-- <script src="./assets/js/url-upload.js"></script> -->
+        <script src="{% static 'main/assets/js/url-upload.js' %}"></script>
+
+        
+		<!-- One Page, Animated-HeadLin -->
+        <script src="{% static 'main/assets/js/wow.min.js' %}"></script>
+		<script src="{% static 'main/assets/js/animated.headline.js' %}"></script>
+        <script src="{% static 'main/assets/js/jquery.magnific-popup.js' %}"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="{% static 'main/assets/js/jquery.scrollUp.min.js' %}"></script>
+        <script src="{% static 'main/assets/js/jquery.nice-select.min.js' %}"></script>
+		<script src="{% static 'main/assets/js/jquery.sticky.js' %}"></script>
+        
+        <!-- contact js -->
+        <script src="{% static 'main/assets/js/contact.js' %}"></script>
+        <script src="{% static 'main/assets/js/jquery.form.js' %}"></script>
+        <script src="{% static 'main/assets/js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'main/assets/js/mail-script.js' %}"></script>
+        <script src="{% static 'main/assets/js/jquery.ajaxchimp.min.js' %}"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="{% static 'main/assets/js/plugins.js' %}"></script>
+        <script src="{% static 'main/assets/js/main.js' %}"></script>
+        
+    </body>
+</html>
